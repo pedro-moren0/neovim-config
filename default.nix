@@ -2,8 +2,6 @@
 {
   options = { };
   config = {
-    # enable = true;
-    # defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     opts = {
@@ -25,7 +23,7 @@
     };
 
     # Nixvim opts
-    colorschemes.ayu.enable = true;
+    colorschemes.dracula.enable = true;
     plugins = {
       lualine.enable = true;
       bufferline.enable = true;
