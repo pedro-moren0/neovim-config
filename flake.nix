@@ -21,7 +21,7 @@
       ];
     };
 
-    nixosModules.neovim = {
+    nixosModules.default = {
       imports = [
         ./default.nix
       ];
