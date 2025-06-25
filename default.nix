@@ -25,19 +25,19 @@
     # Nixvim opts
     colorschemes.gruvbox.enable = true;
 
-    lsp = {
-      inlayHints.enable = true;
+    plugins = {
+      lsp = {
+        inlayHints.enable = true;
 
-      servers.nixd = {
-        enable = true;
-        settings = {
-          formatting.command = [ "nixfmt" ];
-          nixpkgs.expr = "import <nixpkgs> {}";
+        servers.nixd = {
+          enable = true;
+          settings = {
+            formatting.command = [ "nixfmt" ];
+            nixpkgs.expr = "import <nixpkgs> {}";
+          };
         };
       };
-    };
 
-    plugins = {
       lualine.enable = true;
       bufferline.enable = true;
       telescope.enable = true;
