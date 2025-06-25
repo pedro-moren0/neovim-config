@@ -27,6 +27,7 @@
 
     plugins = {
       lsp = {
+        enable = true;
         inlayHints.enable = true;
 
         servers.nixd = {
