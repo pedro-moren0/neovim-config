@@ -26,7 +26,6 @@
     colorschemes.gruvbox.enable = true;
 
     lsp = {
-      enable = true;
       inlayHints.enable = true;
 
       servers.nixd = {
