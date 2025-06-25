@@ -23,7 +23,20 @@
     };
 
     # Nixvim opts
-    colorschemes.dracula.enable = true;
+    colorschemes.gruvbox.enable = true;
+
+    lsp = {
+      enable = true;
+      inlayHints = true;
+
+      servers.nixd = {
+        enable = true;
+        settings = {
+          formatting.command = [ "nixfmt" ];
+          nixpkgs.expr = "import <nixpkgs> {}";
+      };
+    };
+
     plugins = {
       lualine.enable = true;
       bufferline.enable = true;
