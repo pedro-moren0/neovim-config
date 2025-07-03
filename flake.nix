@@ -9,22 +9,36 @@
     };
   };
 
-  outputs = { self, nixvim, ... }@inputs:
-  let
-    system = "x86_64-linux";
-    mkNixvim = nixvim.legacyPackages.${system}.makeNixvim;
-  in
-  {
-    packages.${system}.default = mkNixvim {
-      imports = [
-        ./default.nix
-      ];
-    };
+  outputs =
+    { self, nixpkgs, nixvim, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
 
-    nixosModules.default = {
-      imports = [
-        ./default.nix
-      ];
+      nixvimLib = nixvim.lib.${system};
+      mkNixvim = nixvim.legacyPackages.${system}.makeNixvim;
+      myNixvimConfig = {
+        imports = [
+          ./config
+        ];
+      };
+      nvim = mkNixvim myNixvimConfig;
+    in
+    {
+      packages.${system}.default = nvim;
+
+      nixosModules.default = myNixvimConfig;
+
+      # test env
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = [
+          nvim
+        ];
+      };
+
+      check.default = nixvimLib.check.mkTestDerivationFromNixvim {
+        name = "";
+        nvim = nixvim;
+      };
     };
-  };
 }
