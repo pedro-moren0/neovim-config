@@ -14,6 +14,22 @@
       };
     };
 
+    vimtex.enable = true;
+
+    luasnip = {
+      enable = true;
+      settings = {
+        enable_autosnippets = true;
+        store_selection_keys = "<Tab>";
+        update_events = "TextChanged,TextChangedI";
+      };
+      fromLua = [
+        {
+          paths = ./snippets;
+        }
+      ];
+    };
+
     lualine.enable = true;
     bufferline.enable = true;
     telescope.enable = true;
