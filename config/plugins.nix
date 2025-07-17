@@ -5,16 +5,17 @@
       enable = true;
       inlayHints = true;
 
-      servers.nixd = {
-        enable = true;
-        settings = {
-          formatting.command = [ "nixfmt" ];
-          nixpkgs.expr = "import <nixpkgs> {}";
+      servers = {
+        nixd = {
+          enable = true;
+          settings = {
+            formatting.command = [ "nixfmt" ];
+            nixpkgs.expr = "import <nixpkgs> {}";
+          };
         };
+        ccls.enable = true;
       };
     };
-
-    vimtex.enable = true;
 
     luasnip = {
       enable = true;
