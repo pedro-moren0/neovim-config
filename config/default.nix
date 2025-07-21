@@ -10,7 +10,12 @@
     viAlias = true;
     vimAlias = true;
 
-    colorschemes.gruvbox.enable = true;
+    diagnostic.settings = {
+      virtual_text = false;
+      virtual_lines = true;
+    };
+
+    colorschemes.vscode.enable = true;
 
     extraConfigLuaPre = ''
       local ls = require("luasnip")

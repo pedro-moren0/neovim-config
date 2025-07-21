@@ -13,9 +13,13 @@
             nixpkgs.expr = "import <nixpkgs> {}";
           };
         };
-        ccls.enable = true;
+        ccls = {
+          enable = true;
+          settings.formatting.command = [ "clang-format" ];
+        };
       };
     };
+    lsp-format.enable = true;
 
     luasnip = {
       enable = true;
@@ -38,7 +42,7 @@
       enable = true;
       settings = {
         keymaps = {
-          "<C-t>" = false;    # disable open in tabs -- buffer gang
+          "<C-t>" = false; # disable open in tabs -- buffer gang
         };
         view_options.show_hidden = true;
       };
