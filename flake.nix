@@ -39,7 +39,7 @@
           path = "./templates/latex";
           description = "A LaTeX template with my neovim configuration.";
         };
-        defaultTemplate = self.templates.latex;
+        default = self.templates.latex;
       };
 
       # test env
