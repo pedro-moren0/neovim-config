@@ -10,6 +10,16 @@
       options.silent = true;
     }
 
+    # Telescope
+    {
+      key = "<leader>ff";
+      action = "<cmd>Telescope find_files<CR>";
+    }
+    {
+      key = "<leader>fw";
+      action = "<cmd>Telescope live_grep<CR>";
+    }
+
     # Luasnip
     {
       mode = "i";
@@ -22,7 +32,10 @@
       options.silent = true;
     }
     {
-      mode = ["i" "s"];
+      mode = [
+        "i"
+        "s"
+      ];
       key = "<C-L>";
       action.__raw = ''
         function()
@@ -32,7 +45,10 @@
       options.silent = true;
     }
     {
-      mode = ["i" "s"];
+      mode = [
+        "i"
+        "s"
+      ];
       key = "<C-J>";
       action.__raw = ''
         function()
@@ -42,7 +58,10 @@
       options.silent = true;
     }
     {
-      mode = ["i" "s"];
+      mode = [
+        "i"
+        "s"
+      ];
       key = "<C-E>";
       action.__raw = ''
         function()
@@ -52,6 +71,13 @@
         end
       '';
       options.silent = true;
+    }
+
+    # Others
+    {
+      mode = "n";
+      key = "<leader>bd";
+      action = "<cmd>bdelete<CR>";
     }
   ];
 }

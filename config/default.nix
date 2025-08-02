@@ -15,7 +15,7 @@
       virtual_lines = true;
     };
 
-    colorschemes.vscode.enable = true;
+    colorschemes.ayu.enable = true;
 
     extraConfigLuaPre = ''
       local ls = require("luasnip")

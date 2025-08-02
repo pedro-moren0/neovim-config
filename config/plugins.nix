@@ -55,5 +55,6 @@
 
     nix.enable = true;
     comment.enable = true;
+    vim-surround.enable = true;
   };
 }

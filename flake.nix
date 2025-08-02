@@ -10,7 +10,12 @@
   };
 
   outputs =
-    { self, nixpkgs, nixvim, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      nixvim,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -28,6 +33,14 @@
       packages.${system}.default = nvim;
 
       nixosModules.default = myNixvimConfig;
+
+      templates = {
+        latex = {
+          path = "./templates/latex";
+          description = "A LaTeX template with my neovim configuration.";
+        };
+        defaultTemplate = self.templates.latex;
+      };
 
       # test env
       devShells.${system}.default = pkgs.mkShell {
