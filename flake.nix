@@ -36,7 +36,7 @@
 
       templates = {
         latex = {
-          path = "./templates/latex";
+          path = ./templates/latex;
           description = "A LaTeX template with my neovim configuration.";
         };
         default = self.templates.latex;
