@@ -13,48 +13,48 @@ end
 -- ----------------------------------------------------------------------------
 
 return {
-  -- A snippet that expands the trigger "hi" into the string "Hello, world!".
-  s(
-    { trig = "hi" },
-    { t("Hello, world!") }
-  ),
-
-  -- To return multiple snippets, use one `return` statement per snippet file
-  -- and return a table of Lua snippets.
-  s(
-    {
-      trig = "foo",
-      snippetType = "autosnippet",
-    },
-    { t("Another snippet.") }
-  ),
-
-  s("bar",
-    { t({"Bebe,", "cair e", "levantar"}), }),
-
-  s({trig = "begin", snippetType = "autosnippet"},
-    fmta(
-        [[
-          \begin{<>}
-            <>
-          \end{<>}
-        ]],
-        { i(1), i(2), rep(1) })),
-
-  s("eq",
-    fmta(
-        [[
-          \begin{equation}
-            <>
-          \end{equation}
-        ]],
-        { i(0) })),
-
-  s("frac",
-    fmta(
-        "\\frac{<>}{<>}",
-        { i(1, "place"), i(2, "holder"), })),
-
-  s("tb",
-    fmta("\\textbf{<>}", { d(1, get_visual) })),
+  -- -- A snippet that expands the trigger "hi" into the string "Hello, world!".
+  -- s(
+  --   { trig = "hi" },
+  --   { t("Hello, world!") }
+  -- ),
+  --
+  -- -- To return multiple snippets, use one `return` statement per snippet file
+  -- -- and return a table of Lua snippets.
+  -- s(
+  --   {
+  --     trig = "foo",
+  --     snippetType = "autosnippet",
+  --   },
+  --   { t("Another snippet.") }
+  -- ),
+  --
+  -- s("bar",
+  --   { t({"Bebe,", "cair e", "levantar"}), }),
+  --
+  -- s({trig = "begin", snippetType = "autosnippet"},
+  --   fmta(
+  --       [[
+  --         \begin{<>}
+  --           <>
+  --         \end{<>}
+  --       ]],
+  --       { i(1), i(2), rep(1) })),
+  --
+  -- s("eq",
+  --   fmta(
+  --       [[
+  --         \begin{equation}
+  --           <>
+  --         \end{equation}
+  --       ]],
+  --       { i(0) })),
+  --
+  -- s("frac",
+  --   fmta(
+  --       "\\frac{<>}{<>}",
+  --       { i(1, "place"), i(2, "holder"), })),
+  --
+  -- s("tb",
+  --   fmta("\\textbf{<>}", { d(1, get_visual) })),
 }

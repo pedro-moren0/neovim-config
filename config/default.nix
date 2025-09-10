@@ -15,7 +15,10 @@
       virtual_lines = true;
     };
 
-    colorschemes.ayu.enable = true;
+    colorschemes.ayu = {
+      enable = true;
+      settings.mirage = true;
+    };
 
     extraConfigLuaPre = ''
       local ls = require("luasnip")
