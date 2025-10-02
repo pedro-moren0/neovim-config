@@ -12,7 +12,10 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
       nvim = mynixvim.outputs.packages.${system}.default.extend {
-        plugins.vimtex.enable = true;
+        plugins.vimtex = {
+          enable = true;
+          texlivePackage = null; # use local environment texlive
+        };
       };
     in
     {
