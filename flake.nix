@@ -39,7 +39,11 @@
           path = ./templates/latex;
           description = "A LaTeX template with my neovim configuration.";
         };
-        default = self.templates.latex;
+        basic = {
+          path = ./templates/basic;
+          description = "A custom-made minimalistic nix flake template";
+        };
+        default = self.templates.basic;
       };
 
       # test env
