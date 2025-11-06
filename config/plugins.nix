@@ -38,6 +38,7 @@
     lualine.enable = true;
     bufferline.enable = true;
     telescope.enable = true;
+    highlight-colors.enable = true;
     oil = {
       enable = true;
       settings = {
